@@ -6,18 +6,25 @@ mongoose.set('strictQuery', true)
 mongoose.connect(Datadase_URI).then(()=>{
     console.log(chalk.bgGreen("connected to database"))}
 ).catch(()=>{
-    console.log(chalk.bgRed("Not connect to database"))
+    console.log(chalk.bgRed("  Not connect to database  "))
 }
 )
 
-//** in mongoClient **
-// let Database;
+
 // const MongoClient = require('mongodb').MongoClient;
-// try {
+// function DB( data ,result){
+//     var Data;
 //     MongoClient.connect(Datadase_URI,{useNewUrlParser:true},(err,result)=>{
-//         Database = result.db('Your-collection-database')
-//         console.log("connected")
+//         // result
+//         // .db('Your-collection-database')
+//         if(result){
+//             console.log(chalk.bgGreen(" connected to database "))
+            
+//         }else{
+//             console.log(chalk.bgRed(" Not connect to database "))
+//             Data = "3"
+//         }
 //     })
-// } catch (error) {
-//     console.log("Faild connect to database")
 // }
+
+// module.exports = DB ;
