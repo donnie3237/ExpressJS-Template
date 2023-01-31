@@ -1,2 +1,2 @@
-# MYIOT-SERVER
+# ExpressJS Template
 dose
