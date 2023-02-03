@@ -1,9 +1,26 @@
 //This file to make Controller process
-const bcrypt = require('bcrypt');
 const { ObjectID , ObjectId} = require('bson');
+const model = require('../model/main.model.ts')
 
-function example() {
-    //in the routes file we just do this function
-    console.log('example')
-}
-module.exports = example ;
+exports.exampleMethod = (req,res) => {
+    const User = model
+
+    const new_user = new User({
+        name: req.body.name,
+        age: req.body.age
+    })
+    
+    new_user.save((err, result) => {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log(result)
+            res.send("hello")
+        }
+    })
+    
+};  
+  
+  
+  
+  
