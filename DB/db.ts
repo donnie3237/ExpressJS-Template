@@ -3,7 +3,7 @@ const Datadase_URI : any = process.env.DATABASE_URI;
 const chalk = require('chalk')
 
 mongoose.set('strictQuery', true)
-mongoose.connect(Datadase_URI , {dbName: 'DosE-CRUD'},)
+mongoose.connect(Datadase_URI , {dbName: '<DB-Name>'},)
     .then(()=>{
         console.log(chalk.bgGreen("  Connected to database  "))
         }
@@ -11,4 +11,4 @@ mongoose.connect(Datadase_URI , {dbName: 'DosE-CRUD'},)
     console.log(chalk.bgRed("  Not connect to database  "))
     }
 )
-// to set dbName you can change this in line 6 dbName: '<DB-NAme>'
+// to set dbName you can change this in line 6 dbName: '<DB-Name>'
