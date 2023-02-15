@@ -1,3 +1,5 @@
+//make schema model
+
 import mongoose from "mongoose";
 const model = new mongoose.Schema(
     {
@@ -11,7 +13,7 @@ const model = new mongoose.Schema(
         }
     }, 
     {   
-        collection: 'model'
+        collection: 'model',
     }
 )
 

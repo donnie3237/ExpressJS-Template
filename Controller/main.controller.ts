@@ -1,9 +1,15 @@
 //This file to make Controller process
+
 const { ObjectID , ObjectId} = require('bson');
 const model = require('../model/main.model');
-import express  from "express";
 
-exports.exampleMethod = (req : express.Request,res :express.Response) => {
+import express  from "express";
+type Action = {
+    req: express.Request;
+    res: express.Response;
+}
+
+exports.exampleMethod = ({req,res}:Action) => {
     const User = model
 
     const new_user = new User({
@@ -15,8 +21,7 @@ exports.exampleMethod = (req : express.Request,res :express.Response) => {
         if (err) {
             console.log(err);
         } else {
-            console.log(result)
-            res.send("hello")
+            res.send(result)
         }
     })
     

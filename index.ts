@@ -1,5 +1,5 @@
 require('dotenv').config();
-require('./DB/db.ts')
+require('./DB/db')
 const express = require('express') 
 const app = express();
 const PORT:string | number | undefined = process.env.PORT;
@@ -8,7 +8,6 @@ const Main_router = require('./Routes/main.route');
 
 // use Router
 app.use("/",Main_router)
-
 
 // middle ware
 app.use(express.json())

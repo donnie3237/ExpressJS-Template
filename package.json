@@ -1,11 +1,12 @@
 {
-  "name": "ExpressJS",
+  "name": "ExpressTS",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "start": "nodemon --exec ts-node index.ts",
-    "build": "tsc"
+    "build": "tsc",
+    "dev" : "node ./_dist/index.js"
   },
   "author": "",
   "license": "ISC",
