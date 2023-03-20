@@ -1,34 +1,19 @@
-// import mongoose from "mongoose";
-// const Datadase_URI : any = process.env.DATABASE_URI;
 const chalk = require('chalk')
+const { Sequelize } = require('sequelize');
 
-// mongoose.set('strictQuery', true)
-// mongoose.connect(Datadase_URI , {dbName: '<DB-Name>'},)
-//     .then(()=>{
-//         console.log(chalk.bgGreen("  Connected to database  "))
-//         }
-//     ).catch(()=>{
-//     console.log(chalk.bgRed("  Not connect to database  "))
-//     }
-// )
-// // to set dbName you can change this in line 6 dbName: '<DB-Name>'
-const { Pool } = require('pg');
-
-
-const pool = new Pool({
-    user: 'postgres',
-    host: 'localhost',
-    database: 'dose',
-    password: '3237',
-    port: 5432,
-});
-
-pool.connect((err:any, client:any, done:any) => {
-  if (err) {
-    console.error(chalk.bgRed('Not connect to the database!'));
-  } else {
-    console.log(chalk.bgGreen('Connected to database!'));
+export default new Sequelize(
+  process.env.DB_NAME,
+  process.env.DB_USER,
+  process.env.DB_PASSWORD,
+  {
+    host: process.env.DB_HOST,
+    port: process.env.DB_PORT,
+    dialect: 'postgres'
   }
-});
-
-export const client = pool.connect
+);
+// sequelize.authenticate()
+//   .then(() => {
+//     console.log(chalk.bgGreen('   connected to PostgerSQL!   '))})
+//   .catch((err:any) => {
+//     console.log(chalk.bgRed(' Not connected to PostgerSQL!  '))
+// });

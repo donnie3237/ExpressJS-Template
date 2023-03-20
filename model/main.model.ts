@@ -1,18 +1,25 @@
-import mongoose from "mongoose";
-const model = new mongoose.Schema(
-    {
-        name:{
-            type: String,
-            required: true
-        },
-        age:{
-            type: Number,
-            required: true
-        }
-    }, 
-    {   
-        collection: 'model'
-    }
-)
+import { Model, Sequelize, DataTypes } from 'sequelize';
 
-module.exports = mongoose.model("model", model);
+export default class User extends Model {
+  public id?: number;
+  public name!: string;
+  public age?: number;
+}
+export const UserMap = (sequelize: Sequelize) => {
+  User.init({
+    id: {
+      type: DataTypes.INTEGER
+    },
+    name: {
+      type: DataTypes.CHAR
+    },
+    age:{
+      type: DataTypes.INTEGER
+    }
+  }, {
+    sequelize,
+    tableName: 'dose',
+    timestamps: false
+  });
+  User.sync();
+}

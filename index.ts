@@ -1,5 +1,4 @@
 require('dotenv').config();
-require('./DB/db')
 const express = require('express') 
 const app = express();
 const PORT:string | number | undefined = process.env.PORT;
@@ -19,6 +18,6 @@ app.use(cors({
 app.use(express.urlencoded({ extended : true}))
 
 //listan port
-app.listen(PORT,()=>{
+app.listen(PORT, ()=>{
     console.log(`listining on port ${PORT}`)
 })
