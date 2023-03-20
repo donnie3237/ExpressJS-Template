@@ -17,9 +17,9 @@ exports.exampleMethod = (req:Action,res:Reaction) => {
     
     new_user.save((err : any, result: any) => {
         if (err) {
-            console.log(err);
+            res.sendStatus(400);
         } else {
-            res.send(result)
+            res.sendStatus(201)
         }
     })
     
