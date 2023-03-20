@@ -3,11 +3,11 @@
 const { ObjectID , ObjectId} = require('bson');
 const model = require('../model/main.model');
 
-import express  from "express";
-type Action =  express.Request;
-type Reaction   =  express.Response;
+import {Express , Request ,Response} from "express";
+// type Action =  express.Request;
+// type Reaction   =  express.Response;
 
-exports.exampleMethod = (req:Action,res:Reaction) => {
+exports.exampleMethod = (req:Request,res:Response) => {
     const User = model
 
     const new_user = new User({
