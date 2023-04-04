@@ -12,6 +12,6 @@ mongoose.connect(uri , {dbName: DB_Name},)
         console.log(chalk.bgGreen("  Connected to database  "))
         }
     ).catch(()=>{
-    console.log(chalk.bgRed("  Not connect to database  "))
+        console.log(chalk.bgRed("  Not connect to database  "))
     }
 )
