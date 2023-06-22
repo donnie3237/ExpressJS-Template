@@ -1,8 +1,7 @@
 //router of server side
-import express,{IRouter , Router} from 'express';
-const Main_router : IRouter = Router();
+import {IRouter , Router} from 'express';
 import { create , get} from '../Controller/main.controller'
-Main_router.use(express.urlencoded({ extended: true }));
+const Main_router : IRouter = Router();
 
 Main_router.get("/", get)
 Main_router.post('/example',create)
