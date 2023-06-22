@@ -21,3 +21,5 @@ app.use(express.urlencoded({ extended : true}))
 app.listen(PORT,()=>{
     console.log(`listining on port ${PORT}`)
 })
+
+export default app
