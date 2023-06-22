@@ -1,9 +1,9 @@
 require('dotenv').config();
+require('./DB/db')
 const express = require('express') 
 const app = express();
 const PORT:string | number | undefined = process.env.PORT;
 import cors from 'cors'
-import { connectDB } from './DB/db';
 const Main_router = require('./Routes/main.route');
 
 // use Router
@@ -17,9 +17,7 @@ app.use(cors({
 }));
 app.use(express.urlencoded({ extended : true}))
 
-//listen port
+//listan port
 app.listen(PORT,()=>{
     console.log(`listining on port ${PORT}`)
-    //connect database after run server
-    connectDB()
 })
