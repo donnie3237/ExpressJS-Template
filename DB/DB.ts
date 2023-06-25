@@ -1,15 +1,14 @@
 import { PrismaClient } from '@prisma/client';
-
+const chalk = require('chalk')
 const prisma = new PrismaClient();
 
 export async function checkDatabaseConnection() {
   try {
     await prisma.$connect();
-    console.log('Connected to the database.');
+    console.log(chalk.bgGreen("  Connected to database  "));
   } catch (error) {
-    console.error('Failed to connect to the database:', error);
+    console.log(chalk.bgRed("  Not connect to database  "));
   } finally {
     await prisma.$disconnect();
   }
 }
-

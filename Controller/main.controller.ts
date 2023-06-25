@@ -12,10 +12,4 @@ export async function get(req:Request,res:Response){
         }
     })
     res.send(new_user)
-}
-
-export default {get};
-  
-  
-  
-  
+}  
