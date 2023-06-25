@@ -1,6 +1,7 @@
 //make schema model
-
 import mongoose from "mongoose";
+import { user } from "../types/type";
+
 const model = new mongoose.Schema(
     {
         name:{
@@ -17,4 +18,6 @@ const model = new mongoose.Schema(
     }
 )
 
-module.exports = mongoose.model("model", model);
+const Model: mongoose.Model<user> = mongoose.model("model", model)
+
+export default Model
