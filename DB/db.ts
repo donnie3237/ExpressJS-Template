@@ -1,5 +1,4 @@
 //this is mongoose setting connect to MongoDB database
-
 import mongoose from "mongoose";
 const Datadase_URI: string | undefined = process.env.DATABASE_URI;
 const DB_Name : string | undefined = process.env.DATABASE_NAME
