@@ -6,12 +6,8 @@ import cors from 'cors'
 import { checkDatabaseConnection } from './DB/DB';
 const Main_router = require('./Routes/main.route');
 
-
 //check database connecttion
 checkDatabaseConnection()
-
-// use Router
-app.use("/",Main_router)
 
 // middle ware
 app.use(express.json())
@@ -20,6 +16,9 @@ app.use(cors({
     "methods": ['GET','POST','PUT','DELETE']
 }));
 app.use(express.urlencoded({ extended : true}))
+
+// use Router
+app.use("/",Main_router)
 
 //listen port
 app.listen(PORT, ()=>{
