@@ -2,11 +2,11 @@
 const model = require('../model/main.model');
 import {Request ,Response} from "express";
 
-export const get = (req:Request,res:Response) => {
+export function get(req:Request,res:Response){
     res.send('welcome to expressTS')
 }
 
-export const create = (req:Request,res:Response) => {
+export function create(req:Request,res:Response){
     const User = model
 
     const new_user = new User({
@@ -14,7 +14,7 @@ export const create = (req:Request,res:Response) => {
         age: req.body.age
     })
     
-    new_user.save((err : any, result: any) => {
+    new_user.save((err, result) => {
         if (err) {
             res.sendStatus(400);
         } else {
