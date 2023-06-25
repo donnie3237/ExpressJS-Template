@@ -1,5 +1,5 @@
 //This file to make Controller process
-const model = require('../model/main.model');
+import Model from "../model/main.model";
 import {Request ,Response} from "express";
 
 export function get(req:Request,res:Response){
@@ -7,13 +7,13 @@ export function get(req:Request,res:Response){
 }
 
 export function create(req:Request,res:Response){
-    const User = model
+    const User = Model
 
     const new_user = new User({
         name: req.body.name,
         age: req.body.age
     })
-    
+
     new_user.save((err, result) => {
         if (err) {
             res.sendStatus(400);
