@@ -1,11 +1,11 @@
 //This file to make Controller process
-import express  from "express";
-// import {client} from '../DB/db'
+import {Request ,Response} from "express";
 
-// exports.exampleMethod = async (req : express.Request,res :express.Response) => {
-//     const result = await client.query('SELECT * FROM dose');
-//     res.send(result.rows);
-// };  
+export async function get(req:Request,res:Response){
+    console.log("hello")
+}
+
+export default {get};
   
   
   
