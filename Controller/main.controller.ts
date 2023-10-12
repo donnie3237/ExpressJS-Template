@@ -1,26 +1,20 @@
 //This file to make Controller process
 import Model from "../model/main.model";
 import {Request ,Response} from "express";
-import { user } from "../types/Model.type";
 
-export function get(req:Request,res:Response){
-    res.send('welcome to expressTS')
+export async function get(req:Request,res:Response){
+    const result = await Model.find({})
+    res.send(result)
 }
 
-export function create(req:Request,res:Response){
-    const {name , age} : user = req.body
-    const new_user = new Model({
-        name: name,
-        age: age
+export async function create(req:Request,res:Response){
+    const {name , age} = req.body
+    console.log(name)
+    const result = await Model.create({
+        name: "ff",
+        age: 12
     })
-    
-    new_user.save((err, result) => {
-        if (err) {
-            res.sendStatus(400);
-        } else {
-            res.sendStatus(201)
-        }
-    })
+    res.send(result)
 };
 
 export default {get , create};
