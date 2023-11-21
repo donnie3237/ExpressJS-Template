@@ -14,8 +14,6 @@ export async function create(req:Request,res:Response){
     })
     res.send(result)
 };
-
-export default {get , create};
   
   
   

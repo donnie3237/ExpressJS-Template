@@ -1,21 +1,20 @@
-require('dotenv').config();
-require('./DB/db')
-const express = require('express') 
+import dotenv from 'dotenv';
+dotenv.config();
+import express from 'express';
+import DB from './DB/db'
+
+import Main_router from './Routes/main.route';
+import Middleware from './middleware/middleware';
+
 const app = express();
 const PORT:string | number | undefined = process.env.PORT;
-import cors from 'cors'
-const Main_router = require('./Routes/main.route');
+
+DB;
+// middle ware
+Middleware ;
 
 // use Router
 app.use("/",Main_router)
-
-// middle ware
-app.use(express.json())
-app.use(cors({
-    "origin":'*',
-    "methods": ['GET','POST','PUT','DELETE']
-}));
-app.use(express.urlencoded({ extended : true}))
 
 //listen port
 app.listen(PORT, ()=>{

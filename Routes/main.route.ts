@@ -6,4 +6,4 @@ import { create , get} from '../Controller/main.controller'
 Main_router.get("/", get)
 Main_router.post('/example',create)
 
-module.exports = Main_router ;
+export default Main_router ;
