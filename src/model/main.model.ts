@@ -1,6 +1,6 @@
 //make schema model
-import mongoose from "mongoose"
-import { user } from "../types/Model.type";
+import mongoose from "mongoose";
+import { user } from "../types/type";
 
 const model = new mongoose.Schema(
     {
@@ -19,4 +19,4 @@ const model = new mongoose.Schema(
 )
 
 const Model: mongoose.Model<user> = mongoose.model("model", model)
-export default Model
+export default Model;

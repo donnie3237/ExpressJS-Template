@@ -3,18 +3,14 @@ import Model from "../model/main.model";
 import {Request ,Response} from "express";
 
 export async function get(req:Request,res:Response){
-    const result = await Model.find({})
-    res.send(result)
+    res.send('welcome to expressTS')
 }
 
 export async function create(req:Request,res:Response){
-    const {name , age} = req.body
-    console.log(name)
+    const {name , age} = req.body;
     const result = await Model.create({
-        name: "ff",
-        age: 12
+        name:name,
+        age:age
     })
     res.send(result)
 };
-
-export default {get , create};
