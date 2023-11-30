@@ -3,7 +3,7 @@ import Model from "../model/main.model";
 import {Request ,Response} from "express";
 
 export async function get(req:Request,res:Response){
-     res.send("welcome to expressTS")
+    res.send('welcome to expressTS')
 }
 
 export async function create(req:Request,res:Response){
@@ -14,7 +14,3 @@ export async function create(req:Request,res:Response){
     })
     res.send(result)
 };
-  
-  
-  
-  
